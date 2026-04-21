@@ -395,7 +395,6 @@ body.is-auth #profileWrap { display: block; }
   background: #fff;
   color: var(--ink);
   border-color: var(--grey-300);
-  margin-top: 30px;
 }
 .btn--outline:hover { background: var(--grey-100); }
 .btn--grey { background: var(--grey-200); color: var(--ink); }
@@ -715,6 +714,7 @@ body.is-auth #profileWrap { display: block; }
 .event-card__info svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--grey-500); }
 .event-card__foot {
   display: flex;
+   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: var(--space-3) var(--space-5);
