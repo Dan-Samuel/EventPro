@@ -100,8 +100,8 @@ svg { display: block; }
     box-shadow: var(--shadow-shell);
   }
   /* Round the corners of stacked content so nothing pokes past the shell */
-  .landing-nav, .app-nav { border-radius: 24px 24px 0 0; }
-}
+ /* .landing-nav, .app-nav { border-radius: 24px 24px 0 0; }
+}*/
 
 /* container = shared horizontal padding, NEVER touches edges */
 .container {
