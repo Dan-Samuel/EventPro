@@ -427,14 +427,14 @@ body.is-auth #profileWrap { display: block; }
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow: var(--shadow);
-  margin-bottom: var(--space-10);
+  margin-bottom: var(--space-5);
 }
 .card__title {
   font-size: 22px;
   font-weight: 800;
   text-align: center;
   letter-spacing: -0.01em;
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-8);
 }
 .card__sub {
   color: var(--grey-500);
