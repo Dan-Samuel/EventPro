@@ -333,7 +333,8 @@ body.is-auth #profileWrap { display: block; }
   color: #fff;
   min-height: calc(100vh - var(--nav-h));
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
+   margin-top: 40px;
   justify-content: center;
   padding: var(--space-6) var(--gutter);
   text-align: center;
