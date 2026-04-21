@@ -728,6 +728,7 @@ body.is-auth #profileWrap { display: block; }
 .cta-band {
   background: var(--dark);
   color: #fff;
+   min-height: 420px;
   padding: var(--space-10) var(--gutter);
   text-align: center;
   
