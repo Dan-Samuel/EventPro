@@ -331,7 +331,7 @@ body.is-auth #profileWrap { display: block; }
 .hero {
   background: var(--dark);
   color: #fff;
-  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100vh - var(--gutter));
   display: flex;
   align-items: center;
   justify-content: center;
