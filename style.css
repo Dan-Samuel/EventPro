@@ -395,6 +395,7 @@ body.is-auth #profileWrap { display: block; }
   background: #fff;
   color: var(--ink);
   border-color: var(--grey-300);
+  margin-top: 30px;
 }
 .btn--outline:hover { background: var(--grey-100); }
 .btn--grey { background: var(--grey-200); color: var(--ink); }
