@@ -733,5 +733,6 @@ body.is-auth #profileWrap { display: block; }
    align-items: center;
    gap: 20px;
   padding: var(--space-10) var(--gutter);
+   margin-top: 30px;
   text-align: center;
   
