@@ -106,8 +106,7 @@ svg { display: block; }
 /* container = shared horizontal padding, NEVER touches edges */
 .container {
   width: 90%;
-   justify-content: center;
-   align-items: center;
+   margin: 0 auto;
   padding: 0 var(--gutter);
 }
 
