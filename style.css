@@ -96,12 +96,12 @@ svg { display: block; }
   body { padding: 24px 0; }
   .app-shell {
     min-height: calc(100vh - 48px);
-    
+    border-radius: 24px;
     box-shadow: var(--shadow-shell);
   }
   /* Round the corners of stacked content so nothing pokes past the shell */
- /* .landing-nav, .app-nav { border-radius: 24px 24px 0 0; }
-}*/
+  .landing-nav, .app-nav { border-radius: 24px 24px 0 0; }
+}
 
 /* container = shared horizontal padding, NEVER touches edges */
 .container {
