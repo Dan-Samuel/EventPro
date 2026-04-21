@@ -731,7 +731,7 @@ body.is-auth #profileWrap { display: block; }
    min-height: 320px;
    justify-content: center;
    align-items: center;
-   gap: 14px;
+   gap: 20px;
   padding: var(--space-10) var(--gutter);
   text-align: center;
   
