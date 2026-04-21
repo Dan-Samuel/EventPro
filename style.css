@@ -331,11 +331,11 @@ body.is-auth #profileWrap { display: block; }
 .hero {
   background: var(--dark);
   color: #fff;
-  min-height: calc(100vh - var(--gutter));
+  min-height: calc(100vh - var(--nav-h));
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   justify-content: center;
-  padding: var(--space-2) var(--gutter);
+  padding: var(--space-6) var(--gutter);
   text-align: center;
 }
 .hero__inner { width: 100%; max-width: 420px; }
