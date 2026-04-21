@@ -59,7 +59,7 @@
 /* 2) Reset & base
    -------------------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0 20px; }
 body {
   font-family: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--bg-outside);
