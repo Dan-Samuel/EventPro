@@ -427,7 +427,7 @@ body.is-auth #profileWrap { display: block; }
   border-radius: var(--radius-lg);
   padding: var(--space-5);
   box-shadow: var(--shadow);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-10);
 }
 .card__title {
   font-size: 22px;
