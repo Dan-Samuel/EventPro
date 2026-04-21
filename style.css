@@ -334,7 +334,7 @@ body.is-auth #profileWrap { display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-10) var(--gutter);
+  padding: var(--space-4) var(--gutter);
   text-align: center;
 }
 .hero__inner { width: 100%; max-width: 420px; }
@@ -351,7 +351,7 @@ body.is-auth #profileWrap { display: block; }
 .hero__title {
   font-size: clamp(30px, 8vw, 40px);
   font-weight: 800;
-  line-height: 1.8;
+  line-height: 1.35;
   letter-spacing: -0.02em;
   margin: 0 0 var(--space-4);
 }
