@@ -105,8 +105,8 @@ svg { display: block; }
 
 /* container = shared horizontal padding, NEVER touches edges */
 .container {
-  width: 100%;
-  padding: 20px var(--gutter);
+  width: 80%;
+  padding: 0 var(--gutter);
 }
 
 .section { padding: var(--space-8) 0 var(--space-2); }
