@@ -387,12 +387,12 @@ body.is-auth #profileWrap { display: block; }
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin: 20px 0 var(--space-4);
+  margin: 0 0 var(--space-4);
 }
 .accent { color: var(--blue); }
 .hero__sub {
   color: #cbd5e1;
-  margin: 20px 0 var(--space-6);
+  margin: 0 0 var(--space-6);
   font-size: 15px;
 }
 .hero__actions {
