@@ -95,7 +95,11 @@ const Store = {
   // Events
   getEvents() {
     let events = this.read(STORE.EVENTS, null);
-    if (!events) { events = SEED_EVENTS.slice(); this.write(STORE.EVENTS, events); }
+    if (!events || events.some(e => !e.image && SEED_EVENTS.find(s => s.id === e.id))) {
+      const userCreated = (events || []).filter(e => !SEED_EVENTS.find(s => s.id === e.id));
+      events = [...userCreated, ...SEED_EVENTS];
+      this.write(STORE.EVENTS, events);
+    }
     return events;
   },
   saveEvents(events) { this.write(STORE.EVENTS, events); },
@@ -159,7 +163,9 @@ function tplEventCard(e) {
   return `
     <article class="event-card" data-event-id="${e.id}">
       <div class="event-card__media">
-        <img src="${e.image}" alt="${e.title}" class="event-card__img">
+        ${e.image
+          ? `<img src="${e.image}" alt="${e.title}" class="event-card__img">`
+          : tplPlaceholder(e.cat, 'placeholder--card')}
         <div class="event-card__tags">
           <span class="tag">${e.cat}</span>
           ${e.featured ? '<span class="tag tag--blue">Featured</span>' : ''}
@@ -727,4 +733,4 @@ document.addEventListener('DOMContentLoaded', () => {
   route();
   window.addEventListener('hashchange', route);
 });
-     
+   
