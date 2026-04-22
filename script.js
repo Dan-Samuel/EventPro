@@ -39,6 +39,7 @@ const SEED_EVENTS = [
     title: 'Jazz Under The Stars',
     desc: 'An unforgettable evening of live jazz music in the heart of Golden Gate Park. Featuring three world-class trios.',
     location: 'Golden Gate Park, Port Harcourt',
+    image: './Resources/behindthetmuna-0fRn8KHwtAU-unsplash.jpg',
     capacity: 500, attending: 220, by: 'Carl Lewis' },
   { id: 'yoga', cat: 'Sports & Fitness', featured: false,
     date: '2026-05-08', time: '07:00',
