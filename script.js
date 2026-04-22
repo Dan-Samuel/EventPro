@@ -159,10 +159,8 @@ function tplEventCard(e) {
   return `
     <article class="event-card" data-event-id="${e.id}">
       <div class="event-card__media">
-  ${e.image 
-    ? `<img src="${e.image}" alt="${e.title}" class="event-card__img">`
-    : tplPlaceholder(e.cat)
-  }
+  <img src="${e.image}" alt="${e.title}" class="event-card__img">
+</div>
         <div class="event-card__tags">
           <span class="tag">${e.cat}</span>
           ${e.featured ? '<span class="tag tag--blue">Featured</span>' : ''}
