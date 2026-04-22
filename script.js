@@ -27,7 +27,7 @@ const SEED_EVENTS = [
     desc: 'Learn the fundamentals of watercolor painting in this hands-on 3-hour workshop led by professional artist Maria Chen. All materials provided.',
     location: 'The Art Studio, 40 Dike St, Port Harcourt',
     capacity: 20, attending: 8, by: 'Maria Chen',
-    image: './Resources/jeswin-thomas-zzrlRlPI6iE-unsplash.jpg' },
+    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee' },
   { id: 'tech-summit', cat: 'Tech', featured: true,
     date: '2026-06-20', time: '09:00',
     title: 'PH Tech Summit 2026',
