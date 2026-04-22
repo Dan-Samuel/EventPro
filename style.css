@@ -90,7 +90,17 @@ svg { display: block; }
   min-height: 100vh;
   margin: 0 auto;
   background: var(--bg-shell);
+  /* Sticky-footer flex column: footer goes to bottom when content is short */
+  display: flex;
+  flex-direction: column;
+  /* Defensive: never let any inner element bleed past the shell horizontally */
+  overflow-x: hidden;
 }
+.app-shell > main { flex: 1 0 auto; min-width: 0; }
+.app-shell > .footer { flex-shrink: 0; }
+
+/* Hide footer on internal authenticated routes (dashboard, tickets, create, register) */
+body.no-footer .footer { display: none; }
 
 @media (min-width: 600px) {
   body { padding: 24px 0; }
@@ -98,23 +108,46 @@ svg { display: block; }
     min-height: calc(100vh - 48px);
     border-radius: 24px;
     box-shadow: var(--shadow-shell);
+    overflow: hidden;          /* clip rounded corners cleanly */
   }
   /* Round the corners of stacked content so nothing pokes past the shell */
   .landing-nav, .app-nav { border-radius: 24px 24px 0 0; }
 }
 
-/* container = shared horizontal padding, NEVER touches edges */
+/* container = the single source of horizontal padding for every section.
+   Always ≥ 20px on the left + right, centered, never touching viewport edges. */
 .container {
-  width: 95%;
+  width: 100%;
+  max-width: var(--shell-max);
   margin: 0 auto;
-  padding: 0 var(--gutter);
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  /* Allow flex/grid children to shrink instead of forcing horizontal overflow */
+  min-width: 0;
 }
 
-.section { padding: var(--space-8) 0 var(--space-2); }
+.section {
+  padding: var(--space-8) 0 var(--space-4);
+}
+/* When .container is combined with .section on the same element, keep both paddings */
+.section.container { padding-left: var(--gutter); padding-right: var(--gutter); }
+/* CTA row that sits below an event grid — guaranteed breathing room */
+.section__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+  padding-top: var(--space-2);
+}
 
 .page { display: none; }
 .page.is-active { display: block; }
+/* Default bottom breathing room so content never touches viewport bottom */
+.page > .container:last-child { padding-bottom: var(--space-10); }
+/* Auth pages use their own balanced padding */
 .page--auth { padding: var(--space-6) 0 var(--space-10); }
+.page--auth > .container:last-child { padding-bottom: 0; }
+/* Landing page ends with cta-band, not a container — reset rule above */
+section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8); }
 
 /* 4) Navbars + side menu
    -------------------------------------------------------------------------- */
@@ -338,7 +371,7 @@ body.is-auth #profileWrap { display: block; }
   padding: var(--space-10) var(--gutter);
   text-align: center;
 }
-.hero__inner { width: 100%; max-width: 420px; margin-top: -80px}
+.hero__inner { width: 100%; max-width: 420px; }
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
@@ -347,12 +380,12 @@ body.is-auth #profileWrap { display: block; }
   border-radius: 999px;
   font-size: 13px;
   font-weight: 500;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-5);
 }
 .hero__title {
   font-size: clamp(30px, 8vw, 40px);
   font-weight: 800;
-  line-height: 1.35;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 var(--space-4);
 }
@@ -374,7 +407,7 @@ body.is-auth #profileWrap { display: block; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-4);
+  gap: var(--space-2);
   padding: 12px 20px;
   border-radius: 10px;
   font-weight: 600;
@@ -610,7 +643,13 @@ body.is-auth #profileWrap { display: block; }
 }
 .cat-ico svg { width: 20px; height: 20px; }
 
-.event-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-8); }
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  min-width: 0;
+}
+.event-grid > * { min-width: 0; max-width: 100%; }
 
 .event-card {
   background: #fff;
@@ -662,8 +701,7 @@ body.is-auth #profileWrap { display: block; }
 .placeholder--food     { background: linear-gradient(135deg, #fbbf24, #d97706); }
 
 .event-card__media { position: relative; }
-.event-card__tags {
-  position: absolute;
+.event-card__tags { position: absolute;
   top: var(--space-3); left: var(--space-3);
   display: flex; gap: 6px;
 }
@@ -728,11 +766,315 @@ body.is-auth #profileWrap { display: block; }
 .cta-band {
   background: var(--dark);
   color: #fff;
-   min-height: 320px;
-   justify-content: center;
-   align-items: center;
-   gap: 20px;
   padding: var(--space-10) var(--gutter);
-   margin-top: 30px;
   text-align: center;
-  
+  margin-top: var(--space-10);
+}
+.cta-band h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 var(--space-3);
+  letter-spacing: -0.01em;
+}
+.cta-band p {
+  color: #cbd5e1;
+  margin: 0 0 var(--space-5);
+  font-size: 14px;
+}
+
+/* 11) Event detail
+   -------------------------------------------------------------------------- */
+.detail__title {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-3);
+}
+.detail__desc { color: var(--grey-700); margin: 0 0 var(--space-5); }
+.tag-row { display: flex; gap: 8px; margin-bottom: var(--space-3); }
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--grey-200);
+}
+.info-row:first-of-type { border-top: 0; }
+.info-ico {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--grey-100);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.info-ico svg { width: 16px; height: 16px; color: var(--ink); }
+.info-row strong { display: block; font-size: 15px; }
+.info-row .label { color: var(--grey-500); font-size: 13px; }
+
+/* 12) Dashboard
+   -------------------------------------------------------------------------- */
+.tabs {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+  background: var(--grey-100);
+  padding: 4px;
+  border-radius: 12px;
+}
+.tab {
+  flex: 1;
+  padding: 10px var(--space-3);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: transparent;
+  color: var(--grey-700);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background var(--tx), color var(--tx), box-shadow var(--tx);
+}
+.tab svg { width: 18px; height: 18px; }
+.tab:hover { color: var(--ink); }
+.tab.is-active {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: var(--shadow-sm);
+}
+.tab-pane { display: none; }
+.tab-pane.is-active { display: block; animation: fadeIn .25s ease; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.stat-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.stat-ico {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.stat-ico svg { width: 20px; height: 20px; }
+.stat-card__label { font-size: 13px; color: var(--grey-700); display: block; }
+.stat-card__num { font-size: 22px; font-weight: 800; }
+
+.activity-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+  gap: var(--space-3);
+}
+.activity-card strong { display: block; font-size: 14px; }
+.activity-card .muted { font-size: 13px; }
+
+/* 13) Tickets / shared
+   -------------------------------------------------------------------------- */
+.ticket-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+  transition: transform var(--tx), box-shadow var(--tx);
+}
+.ticket-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.ticket-card__media { position: relative; }
+.badge {
+  position: absolute;
+  top: var(--space-3); left: var(--space-3);
+  background: var(--blue);
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge--past { background: var(--grey-500); }
+.ticket-card__body { padding: var(--space-4) var(--space-5) var(--space-5); }
+.ticket-card__title {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-3);
+}
+.meta {
+  color: var(--grey-700);
+  font-size: 13px;
+  margin: var(--space-1) 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.split-stats {
+  display: flex;
+  align-items: center;
+  margin: var(--space-5) 0;
+}
+.split-stats > div { flex: 1; text-align: center; }
+.split-stats__num { font-size: 22px; font-weight: 800; display: block; }
+.split-stats span { color: var(--grey-700); font-size: 13px; }
+.split-stats__divider { width: 1px; align-self: stretch; background: var(--grey-200); }
+
+.two-btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+/* Order summary */
+.summary {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  align-items: center;
+}
+.summary strong { display: block; }
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--grey-200);
+}
+
+/* 14) Footer — modern vertical stacked layout, sits at the bottom of the shell
+   -------------------------------------------------------------------------- */
+.footer {
+  background: #fff;
+  border-top: 1px solid var(--grey-200);
+  padding: var(--space-10) 0 var(--space-6);
+  margin-top: auto;            /* pushes footer to the bottom inside the shell */
+}
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.footer__brand h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0 0 var(--space-2);
+  color: var(--blue);
+  letter-spacing: -0.01em;
+}
+.footer__brand p {
+  color: var(--grey-500);
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.55;
+  max-width: 360px;
+}
+.footer__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.footer__group h4 {
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 0 var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--grey-500);
+}
+.footer__group a {
+  padding: 8px 0;
+  color: var(--grey-700);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color var(--tx);
+}
+.footer__group a:hover { color: var(--blue); }
+.footer__bottom {
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--grey-200);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+.footer__bottom p {
+  font-size: 12px;
+  color: var(--grey-500);
+  margin: 0;
+}
+
+/* 15) Toast & empty
+   -------------------------------------------------------------------------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  top: 24px;
+  transform: translate(-50%, -200%);
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  transition: transform 300ms cubic-bezier(.4,0,.2,1),
+              opacity 200ms ease,
+              visibility 0s linear 300ms;
+  max-width: calc(100% - 32px);
+  pointer-events: none;
+}
+.toast.is-show {
+  transform: translate(-50%, 0);
+  visibility: visible;
+  opacity: 1;
+  transition: transform 300ms cubic-bezier(.4,0,.2,1),
+              opacity 200ms ease,
+              visibility 0s;
+}
+.toast--success { background: #15803d; }
+.toast--error   { background: var(--red); }
+
+.empty {
+  background: #fff;
+  border: 1px dashed var(--grey-300);
+  border-radius: var(--radius);
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--grey-500);
+  font-size: 14px;
+  margin-bottom: var(--space-4);
+}
+
+/* 16) Responsive — only small refinements; layout stays mobile-first
+   -------------------------------------------------------------------------- */
+@media (min-width: 380px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .stats-grid .stat-card:first-child { grid-column: span 2; }
+}
+
+ 
