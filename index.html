@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EventPro</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="styles.css?v=4" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -99,7 +99,7 @@
         <h2 class="section__title">Featured Events</h2>
         <p class="section__sub">Hand-picked events you won't want to miss</p>
         <div class="event-grid" id="featuredList"></div>
-        <div class="text-center"><a href="#/events" class="btn btn--outline">View all events</a></div>
+        <div class="section__cta"><a href="#/events" class="btn btn--outline">View all events</a></div>
       </section>
 
       <section class="container section">
@@ -114,29 +114,6 @@
         <a href="#/create" class="btn btn--primary btn--block">Start Hosting Today</a>
       </section>
 
-      <footer class="footer">
-        <div class="container">
-          <h3>EventPro</h3>
-          <p class="muted">Where communities come to life. Discover events you love or host your own.</p>
-          <div class="footer__cols">
-            <div class="footer__col">
-              <h4>Discover</h4>
-              <a href="#/events">Concerts</a>
-              <a href="#/events">Workshops</a>
-              <a href="#/events">Networking</a>
-            </div>
-            <div class="footer__col">
-              <h4>Host</h4>
-              <a href="#/signup">Create account</a>
-              <a href="#/create">Host event</a>
-              <a href="#/signin">Organizer login</a>
-            </div>
-          </div>
-          <div class="footer__bottom">
-            <p>© 2026 EventPro. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
     </section>
 
     <!-- ====================== SIGN UP ====================== -->
@@ -398,8 +375,40 @@
     </section>
 
   </main>
+
+  <!-- ============================================================
+       FOOTER — appears on every page, sticks to bottom when content is short
+       ============================================================ -->
+  <footer class="footer" id="appFooter">
+    <div class="container">
+      <div class="footer__brand">
+        <h3>EventPro</h3>
+        <p>Where communities come to life. Discover events you love or host your own.</p>
+      </div>
+
+      <div class="footer__group">
+        <h4>Discover</h4>
+        <a href="#/events">Concerts</a>
+        <a href="#/events">Workshops</a>
+        <a href="#/events">Networking</a>
+      </div>
+
+      <div class="footer__group">
+        <h4>Host</h4>
+        <a href="#/signup">Create account</a>
+        <a href="#/create">Host event</a>
+        <a href="#/signin">Organizer login</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 EventPro. All rights reserved.</p>
+        <p class="muted">Built with care for event lovers.</p>
+      </div>
+    </div>
+  </footer>
 </div><!-- /.app-shell -->
 
-<script src="./script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
-</html>
+  </html>
+  
