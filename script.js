@@ -389,11 +389,11 @@ function renderTickets() {
 }
 
 /* ---------- 6) Forms & validation -------------------------------------- */
-  
-  const Validators = {
+const Validators = {
   required: v => !!v.trim() || 'This field is required',
-  email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || 'Enter a valid email',
-  minLen: n => v => v.length >= n || `Must be at least ${n} characters`
+  email:    v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) || 'Enter a valid email',
+  minLen:   n => v => v.length >= n || `Must be at least ${n} characters`,
+  phone:    v => !v || /^[+\d\s\-()]{6,}$/.test(v) || 'Enter a valid phone number',
 };
 
 function setError(field, msg) {
@@ -500,6 +500,7 @@ function renderSideMenu() {
     ? [
         { href: '#/',         label: 'Home' },
         { href: '#/events',   label: 'Browse Events' },
+        { href: '#/events',   label: 'Categories' },
         { href: '#/tickets',  label: 'My Events' },
         { href: '#/dashboard',label: 'Organizer Dashboard' },
         { href: '#/create',   label: 'Create Event' },
@@ -660,6 +661,11 @@ function route() {
   document.body.classList.toggle('is-landing', isLanding);
   document.body.classList.toggle('is-app',     !isLanding);
 
+  // Footer visibility: only on landing + public/non-auth pages.
+  // Hide on internal authenticated screens (dashboard, my tickets, create, register).
+  const NO_FOOTER_ROUTES = ['/dashboard', '/tickets', '/create', '/register'];
+  document.body.classList.toggle('no-footer', NO_FOOTER_ROUTES.includes(path));
+
   // Show matching page
   let matched = false;
   $$('.page').forEach(p => {
@@ -703,3 +709,4 @@ document.addEventListener('DOMContentLoaded', () => {
   route();
   window.addEventListener('hashchange', route);
 });
+     
