@@ -364,14 +364,14 @@ body.is-auth #profileWrap { display: block; }
 .hero {
   background: var(--dark);
   color: #fff;
-  min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100vh - var(--gutter));
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--space-2) var(--gutter);
   text-align: center;
 }
-.hero__inner { width: 100%; max-width: 420px; }
+.hero__inner { width: 100%; max-width: 420px; margin-top: -20px; }
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
@@ -381,6 +381,7 @@ body.is-auth #profileWrap { display: block; }
   font-size: 13px;
   font-weight: 500;
   margin-bottom: var(--space-5);
+   margin-top: -40px;
 }
 .hero__title {
   font-size: clamp(30px, 8vw, 40px);
