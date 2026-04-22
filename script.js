@@ -159,7 +159,10 @@ function tplEventCard(e) {
   return `
     <article class="event-card" data-event-id="${e.id}">
       <div class="event-card__media">
-        ${tplPlaceholder(e.cat)}
+  ${e.image 
+    ? `<img src="${e.image}" alt="${e.title}" class="event-card__img">`
+    : tplPlaceholder(e.cat)
+  }
         <div class="event-card__tags">
           <span class="tag">${e.cat}</span>
           ${e.featured ? '<span class="tag tag--blue">Featured</span>' : ''}
@@ -227,7 +230,10 @@ function renderEventDetail(id) {
   if (!ev) { root.innerHTML = `<div class="empty">Event not found.</div>`; return; }
   const registered = Store.hasReg(ev.id);
   root.innerHTML = `
-    ${tplPlaceholder(ev.cat, 'placeholder--hero')}
+    ${ev.image 
+  ? `<img src="${ev.image}" alt="${ev.title}" class="event-card__img">`
+  : tplPlaceholder(ev.cat, 'placeholder--hero')
+    }
     <div class="tag-row">
       <span class="tag">${ev.cat}</span>
       ${ev.featured ? '<span class="tag tag--blue">Featured</span>' : ''}
@@ -282,7 +288,10 @@ function renderRegister(eventId) {
   summary.innerHTML = `
     <h3 class="card__title text-left" style="font-size:18px">Order Summary</h3>
     <div class="summary">
-      ${tplPlaceholder(ev.cat, 'placeholder--thumb')}
+      ${ev.image 
+  ? `<img src="${ev.image}" alt="${ev.title}" class="event-card__img">`
+  : tplPlaceholder(ev.cat, 'placeholder--thumb')
+      }
       <div>
         <strong>${ev.title}</strong>
         <span class="muted">${ev.by}</span>
@@ -336,7 +345,10 @@ function renderDashboard() {
     ? myRegs.map(({ev}) => `
       <article class="ticket-card" data-event-id="${ev.id}">
         <div class="ticket-card__media">
-          ${tplPlaceholder(ev.cat)}
+          ${ev.image 
+  ? `<img src="${ev.image}" alt="${ev.title}" class="event-card__img">`
+  : tplPlaceholder(ev.cat)
+          }
           <span class="badge ${isPast(ev.date) ? 'badge--past' : ''}">${isPast(ev.date) ? 'Past' : 'Upcoming'}</span>
         </div>
         <div class="ticket-card__body">
@@ -369,7 +381,10 @@ function renderTickets() {
   const tplTicket = (ev, kind) => `
     <article class="ticket-card" data-event-id="${ev.id}">
       <div class="ticket-card__media">
-        ${tplPlaceholder(ev.cat)}
+        ${ev.image 
+  ? `<img src="${ev.image}" alt="${ev.title}" class="event-card__img">`
+  : tplPlaceholder(ev.cat)
+        }
         <span class="badge ${kind === 'past' ? 'badge--past' : ''}">${kind === 'past' ? 'Past' : 'Upcoming'}</span>
       </div>
       <div class="ticket-card__body">
