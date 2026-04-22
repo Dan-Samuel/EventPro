@@ -34,7 +34,7 @@ const SEED_EVENTS = [
     desc: 'The premier technology conference in Port Harcourt, bringing together innovators, founders and engineers from across West Africa.',
     location: 'The Arcane Hall, 10 Prima St, Port Harcourt',
     capacity: 2000, attending: 100, by: 'Jin Fisher',
-    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee' },
+    image: 'Resources/headway-F2KRf_QfCqw-unsplash.jpg' },
   { id: 'jazz', cat: 'Music', featured: true,
     date: '2026-05-22', time: '19:00',
     title: 'Jazz Under The Stars',
