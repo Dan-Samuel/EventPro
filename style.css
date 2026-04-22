@@ -338,7 +338,7 @@ body.is-auth #profileWrap { display: block; }
   padding: var(--space-10) var(--gutter);
   text-align: center;
 }
-.hero__inner { width: 100%; max-width: 420px; margin-top: -40px}
+.hero__inner { width: 100%; max-width: 420px; margin-top: -80px}
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
@@ -347,7 +347,7 @@ body.is-auth #profileWrap { display: block; }
   border-radius: 999px;
   font-size: 13px;
   font-weight: 500;
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-8);
 }
 .hero__title {
   font-size: clamp(30px, 8vw, 40px);
