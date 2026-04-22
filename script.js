@@ -61,7 +61,8 @@ const SEED_EVENTS = [
     title: 'Bay Area Entrepreneurs Meetup',
     desc: 'Monthly gathering of Bay Area entrepreneurs, founders, and aspiring business owners. Share ideas and find collaborators.',
     location: 'WeWork, 44 Monk St, Lagos',
-    capacity: 80, attending: 50, by: 'Luke Collins' },
+    capacity: 80, attending: 50, by: 'Luke Collins',
+    image: './Resources/ninthgrid-AekHsx1SxXQ-unsplash.jpg' },
 ];
 
 const CAT_ICONS = {
