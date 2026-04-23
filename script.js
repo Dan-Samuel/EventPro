@@ -74,15 +74,6 @@ const SEED_EVENTS = [
   'Sports & Fitness': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M3 9h3M3 15h3M18 9h3M18 15h3M6 12h12"/></svg>',
 };
 
-‎/* const CAT_ICONS = {
-‎  Music: '<img src="./Resources/microphone-stage.png" />',
-‎  Business: '<img src="./Resources/buildings.png" />',
-‎  'Food & Drinks': '<img src="./Resources/bowl-steam.png" />',
-‎  'Art & Culture': '<img src="./‎Resources/farm.png />',
-‎  Tech: '<img src="./‎Resources/atom.png" />',
-‎  'Sports & Fitness': '<img src="./Resources/barbell.png" />'
-‎}; */
-
 const CATEGORIES = [
   { name: 'Music',            cls: 'placeholder--music',    color: '#4f46e5' },
   { name: 'Business',         cls: 'placeholder--business', color: '#475569' },
