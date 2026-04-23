@@ -365,7 +365,7 @@ body.is-auth #profileWrap { display: block; }
   color: #fff;
   min-height: calc(100vh - var(--nav-h));
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 20px var(--gutter);
   text-align: center;
