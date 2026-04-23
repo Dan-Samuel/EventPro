@@ -1,4 +1,4 @@
-# 🎉 EventPro
+# EventPro
 
 EventPro is a modern event discovery and management web application that allows users to browse events, register for events, and for organizers to create and manage their own events.
 
