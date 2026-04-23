@@ -365,19 +365,17 @@ body.is-auth #profileWrap { display: block; }
   color: #fff;
   min-height: calc(100vh - var(--nav-h));
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 30px 20px 0 20px;
+  padding: var(--space-10) var(--gutter);
   text-align: center;
-  z-index: 1000;
 }
-.hero__inner { width: 80%; max-width: 420px; display: flex; flex-direction: column; gap: 20px 0; margin-top: 60px; z-index: 1000; }
+.hero__inner { width: 100%; max-width: 420px; }
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
   color: #d1d5db;
-  padding: 6px 0;
-  width: 75%;
-  margin: 0 auto;
+  padding: 7px 16px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: 500;
