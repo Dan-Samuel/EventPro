@@ -288,27 +288,14 @@ body.is-auth #profileWrap { display: block; }
 .side-menu .menu-logout { color: var(--red); margin-top: 4px; }
 .side-menu__close {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 34px;
-  height: 34px;
-  font-size: 20px;
-  line-height: 1;
+  top: 10px; right: 10px;
+  width: 36px; height: 36px;
+  font-size: 26px;
   color: var(--grey-500);
   border-radius: 50%;
   background: transparent;
-  border: 1.5px solid var(--grey-200);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background var(--tx), border-color var(--tx), color var(--tx);
 }
-.side-menu__close:hover {
-  background: var(--grey-100);
-  border-color: var(--grey-300);
-  color: var(--ink);
-}
-
+.side-menu__close:hover { background: var(--grey-100); }
 .menu-backdrop {
   position: fixed;
   inset: 0;
