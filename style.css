@@ -421,7 +421,7 @@ body.is-auth #profileWrap { display: block; }
 .btn:active { transform: scale(.98); }
 .btn--block { display: flex; width: 100%; }
 .btn--sm { padding: 8px 14px; font-size: 13px; }
-.btn--primary { background: var(--blue); color: #fff; }
+.btn--primary { background: #fff; color: var(--ink); }
 .btn--primary:hover { background: var(--blue-600); filter: none; }
 .btn--dark { background: var(--ink); color: #fff; }
 .btn--outline {
