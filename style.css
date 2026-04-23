@@ -374,7 +374,7 @@ body.is-auth #profileWrap { display: block; }
 }
 .hero__inner { 
    position: relative; 
-   top: 5%; 
+   top: 12.5%; 
    width: 100%; 
    max-width: 420px; 
    z-index: 2; 
