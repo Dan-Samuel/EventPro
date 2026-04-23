@@ -733,4 +733,91 @@ document.addEventListener('DOMContentLoaded', () => {
   route();
   window.addEventListener('hashchange', route);
 });
+
+/* ================================
+   PARTICLES BACKGROUND (tsParticles)
+================================ */
+
+function initParticles() {
+  // Make sure the container exists before running
+  const container = document.getElementById("tsparticles");
+  if (!container || typeof tsParticles === "undefined") return;
+
+  tsParticles.load("tsparticles", {
+    background: {
+      color: "transparent"
+    },
+    fpsLimit: 60,
+    particles: {
+      number: {
+        value: 60,
+        density: {
+          enable: true,
+          area: 800
+        }
+      },
+      color: {
+        value: "#ffffff"
+      },
+      shape: {
+        type: "circle"
+      },
+      opacity: {
+        value: 0.4,
+        random: true
+      },
+      size: {
+        value: { min: 1, max: 3 }
+      },
+      links: {
+        enable: true,
+        distance: 120,
+        color: "#ffffff",
+        opacity: 0.2,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 0.5,
+        direction: "none",
+        outModes: {
+          default: "out"
+        }
+      }
+    },
+    interactivity: {
+      events: {
+        onHover: {
+          enable: true,
+          mode: "grab"
+        },
+        resize: true
+      },
+      modes: {
+        grab: {
+          distance: 140,
+          links: {
+            opacity: 0.4
+          }
+        }
+      }
+    },
+    detectRetina: true
+  });
+}
+
+
+/* ================================
+   APP INITIALIZATION
+================================ */
+
+window.addEventListener("load", () => {
+  // Init particles
+  initParticles();
+
+  // ===== Your existing functions below =====
+  // Example:
+  // initNavbar();
+  // initDashboard();
+});
    
