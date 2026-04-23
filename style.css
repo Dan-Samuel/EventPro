@@ -365,13 +365,13 @@ body.is-auth #profileWrap { display: block; }
   color: #fff;
   min-height: calc(100vh - var(--nav-h));
   display: flex;
+  gap: 40px 0;
   align-items: start;
   justify-content: center;
   padding: 30px var(--gutter);
   text-align: center;
-   gap:20px;
 }
-.hero__inner { width: 100%; max-width: 420px; gap:20px; }
+.hero__inner { width: 100%; max-width: 420px; }
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
