@@ -97,7 +97,6 @@ svg { display: block; }
   overflow-x: hidden;
 }
 .app-shell > main { flex: 1 0 auto; min-width: 0; }
-‎#app { padding-top: var(--nav-h); }
 .app-shell > .footer { flex-shrink: 0; }
 
 /* Hide footer on internal authenticated routes (dashboard, tickets, create, register) */
@@ -167,22 +166,18 @@ section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8)
 }
 
 /* Both navbars share these dimensions */
-‎.landing-nav,
-‎.app-nav {
-‎  display: none;
-‎  align-items: center;
-‎  justify-content: space-between;
-‎  gap: var(--space-3);
-‎  height: var(--nav-h);
-‎  padding: 0 var(--gutter);
-‎  position: fixed;
-‎  top: 0;
-‎  left: 50%;
-‎  transform: translateX(-50%);
-‎  width: 100%;
-‎  max-width: var(--shell-max);
-‎  z-index: 50;
-‎}
+.landing-nav,
+.app-nav {
+  display: none;                         /* toggled by body classes */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  height: var(--nav-h);
+  padding: 0 var(--gutter);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
 
 /* Landing nav — dark, only on landing route when LOGGED OUT */
 .landing-nav { background: var(--dark); }
@@ -377,34 +372,35 @@ body.is-auth #profileWrap { display: block; }
   text-align: center;
 }
 .hero__inner { width: 100%; max-width: 420px; }
-.pill {
-  display: inline-block;
-  background: rgba(255,255,255,.1);
-  color: #d1d5db;
-  padding: 7px 16px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
-  margin-bottom: var(--space-5);
-}
-.hero__title {
-  font-size: clamp(30px, 8vw, 40px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin: 0 0 var(--space-4);
-}
-.accent { color: var(--blue); }
-.hero__sub {
-  color: #cbd5e1;
-  margin: 0 0 var(--space-6);
-  font-size: 15px;
-}
-.hero__actions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
+‎.pill {
+‎  display: inline-block;
+‎  background: rgba(255,255,255,.1);
+‎  color: #d1d5db;
+‎  padding: 9px 18px;
+‎  border-radius: 999px;
+‎  font-size: 13px;
+‎  font-weight: 500;
+‎  margin-bottom: var(--space-6);
+‎}
+‎.hero__title {
+‎  font-size: clamp(30px, 8vw, 40px);
+‎  font-weight: 800;
+‎  line-height: 1.1;
+‎  letter-spacing: -0.02em;
+‎  margin: 0 0 var(--space-5);
+‎}
+‎.accent { color: var(--blue); }
+‎.hero__sub {
+‎  color: #cbd5e1;
+‎  margin: 0 0 var(--space-8);
+‎  font-size: 15px;
+‎  line-height: 1.6;
+‎}
+‎.hero__actions {
+‎  display: flex;
+‎  flex-direction: column;
+‎  gap: var(--space-4);
+‎}
 
 /* 7) Buttons
    -------------------------------------------------------------------------- */
