@@ -477,7 +477,7 @@ function bindForms() {
       phone: $('#reg-phone').value.trim(),
       registeredAt: new Date().toISOString(),
     });
-    showToast('🎉 Registration confirmed!', 'success');
+    showToast('Registration confirmed!', 'success');
     location.hash = '#/tickets';
   });
 
