@@ -750,7 +750,7 @@ function initParticles() {
     fpsLimit: 60,
     particles: {
       number: {
-        value: 50
+        value: 10
       },
       color: {
         value: ["#3b82f6", "#ffffff"] // blue + white
@@ -762,11 +762,11 @@ function initParticles() {
         }
       },
       opacity: {
-        value: 0.35,
+        value: 0.5,
         random: true
       },
       size: {
-        value: { min: 1, max: 2.5 }
+        value: { min: 5, max: 10 }
       },
       links: {
         enable: false
