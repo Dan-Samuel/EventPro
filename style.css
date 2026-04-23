@@ -852,7 +852,7 @@ body.is-auth #profileWrap { display: block; }
 .tab:hover { color: var(--ink); }
 .tab.is-active {
   background: #fff;
-  color: var(--ink);
+  color: var(--blue);
   box-shadow: var(--shadow-sm);
 }
 .tab-pane { display: none; }
