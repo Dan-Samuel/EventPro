@@ -97,6 +97,7 @@ svg { display: block; }
   overflow-x: hidden;
 }
 .app-shell > main { flex: 1 0 auto; min-width: 0; }
+‎#app { padding-top: var(--nav-h); }
 .app-shell > .footer { flex-shrink: 0; }
 
 /* Hide footer on internal authenticated routes (dashboard, tickets, create, register) */
@@ -166,18 +167,22 @@ section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8)
 }
 
 /* Both navbars share these dimensions */
-.landing-nav,
-.app-nav {
-  display: none;                         /* toggled by body classes */
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
-  height: var(--nav-h);
-  padding: 0 var(--gutter);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
+‎.landing-nav,
+‎.app-nav {
+‎  display: none;
+‎  align-items: center;
+‎  justify-content: space-between;
+‎  gap: var(--space-3);
+‎  height: var(--nav-h);
+‎  padding: 0 var(--gutter);
+‎  position: fixed;
+‎  top: 0;
+‎  left: 50%;
+‎  transform: translateX(-50%);
+‎  width: 100%;
+‎  max-width: var(--shell-max);
+‎  z-index: 50;
+‎}
 
 /* Landing nav — dark, only on landing route when LOGGED OUT */
 .landing-nav { background: var(--dark); }
