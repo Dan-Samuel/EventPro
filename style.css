@@ -878,6 +878,7 @@ body.is-auth #profileWrap { display: block; }
 #eventDetail > img {
   border-radius: 16px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 /* 12) Dashboard
