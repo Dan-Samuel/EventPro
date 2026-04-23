@@ -1058,7 +1058,7 @@ body.is-auth #profileWrap { display: block; }
   min-width: 220px;
   max-width: calc(var(--shell-max) - 40px);
   text-align: center;
-  border-left: 2px solid var(--blue);
+  border: 0 2px solid var(--blue);
   transition: transform 300ms cubic-bezier(.4,0,.2,1),
               opacity 200ms ease,
               visibility 0s linear 300ms;
