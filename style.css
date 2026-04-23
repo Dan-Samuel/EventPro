@@ -157,7 +157,7 @@ section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8)
   color: var(--blue);
   letter-spacing: -0.02em;
 }
-.brand--light { color: #fff; }
+.brand--light { color: var(--blue); }
 .brand--big {
   display: block;
   text-align: center;
