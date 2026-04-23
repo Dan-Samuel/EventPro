@@ -505,6 +505,7 @@ body.is-auth #profileWrap { display: block; }
   padding: var(--space-5);
   box-shadow: var(--shadow);
   margin-bottom: var(--space-5);
+  margin-top: 20px;
 }
 .card__title {
   font-size: 22px;
