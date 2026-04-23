@@ -66,12 +66,12 @@ const SEED_EVENTS = [
 ];
 
   const CAT_ICONS = {
-  Music:              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/></svg>',
-  Business:           '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="9" y1="8" x2="9" y2="8.01"/><line x1="15" y1="8" x2="15" y2="8.01"/><line x1="9" y1="13" x2="9" y2="13.01"/><line x1="15" y1="13" x2="15" y2="13.01"/></svg>',
-  'Food & Drinks':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11h14a3 3 0 0 1 0 6h-1"/><path d="M4 11v5a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4"/><line x1="8" y1="3" x2="8" y2="6"/><line x1="12" y1="3" x2="12" y2="6"/></svg>',
-  'Art & Culture':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20l5-9 4 6 3-4 6 7"/><path d="M3 20h18"/></svg>',
-  Tech:               '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><ellipse cx="12" cy="12" rx="10" ry="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/></svg>',
-  'Sports & Fitness': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4v16M18 4v16M3 9h3M3 15h3M18 9h3M18 15h3M6 12h12"/></svg>',
+  Music:              '<img src="https://img.icons8.com/ios-filled/50/ffffff/musical-notes.png" alt="Music"/>',
+  Business:           '<img src="https://img.icons8.com/ios-filled/50/ffffff/briefcase.png" alt="Business"/>',
+  'Food & Drinks':    '<img src="https://img.icons8.com/ios-filled/50/ffffff/restaurant.png" alt="Food"/>',
+  'Art & Culture':    '<img src="https://img.icons8.com/ios-filled/50/ffffff/paint-palette.png" alt="Art"/>',
+  Tech:               '<img src="https://img.icons8.com/ios-filled/50/ffffff/laptop.png" alt="Tech"/>',
+  'Sports & Fitness': '<img src="https://img.icons8.com/ios-filled/50/ffffff/dumbbell.png" alt="Sports"/>',
 };
 
 const CATEGORIES = [
