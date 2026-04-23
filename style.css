@@ -369,8 +369,9 @@ body.is-auth #profileWrap { display: block; }
   justify-content: center;
   padding: var(--space-10) var(--gutter);
   text-align: center;
+  z-index: 1000;
 }
-.hero__inner { width: 100%; max-width: 420px; z-index: 2; }
+.hero__inner { width: 100%; max-width: 420px; z-index: 1000; }
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
