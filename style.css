@@ -869,6 +869,12 @@ body.is-auth #profileWrap { display: block; }
 .info-row strong { display: block; font-size: 15px; }
 .info-row .label { color: var(--grey-500); font-size: 13px; }
 
+/* Event detail spacing fix */
+#eventDetail > img {
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
 /* 12) Dashboard
    -------------------------------------------------------------------------- */
 .tabs {
