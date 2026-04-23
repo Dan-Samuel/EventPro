@@ -685,7 +685,11 @@ body.is-auth #profileWrap { display: block; }
   justify-content: center;
   color: #fff;
 }
-.cat-ico svg { width: 20px; height: 20px; }
+.cat-ico img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
 
 .event-grid {
   display: grid;
