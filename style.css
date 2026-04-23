@@ -362,16 +362,17 @@ body.is-auth #profileWrap { display: block; }
    -------------------------------------------------------------------------- */
 .hero {
   position: relative;
+   height: 100vh;
+   overflow: hidden;
   background: var(--dark);
   color: #fff;
-  min-height: calc(100vh - var(--nav-h));
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--space-10) var(--gutter);
   text-align: center;
 }
-.hero__inner { position: relative; width: 100%; max-width: 420px; z-index: 5; }
+.hero__inner { position: relative; top: 50%; width: 100%; max-width: 420px; z-index: 5; }
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
