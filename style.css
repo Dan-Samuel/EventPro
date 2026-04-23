@@ -361,6 +361,7 @@ body.is-auth #profileWrap { display: block; }
 /* 6) Hero — full viewport height
    -------------------------------------------------------------------------- */
 .hero {
+  position: relative;
   background: var(--dark);
   color: #fff;
   min-height: calc(100vh - var(--nav-h));
@@ -369,9 +370,8 @@ body.is-auth #profileWrap { display: block; }
   justify-content: center;
   padding: var(--space-10) var(--gutter);
   text-align: center;
-  z-index: 1000;
 }
-.hero__inner { width: 100%; max-width: 420px; z-index: 1000; }
+.hero__inner { position: relative; width: 100%; max-width: 420px; z-index: 5; }
 .pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
