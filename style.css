@@ -371,7 +371,7 @@ body.is-auth #profileWrap { display: block; }
   text-align: center;
 }
 .hero__inner { width: 100%; max-width: 420px; }
-‎.pill {
+.pill {
   display: inline-block;
   background: rgba(255,255,255,.1);
   color: #d1d5db;
