@@ -763,7 +763,7 @@ function initParticles() {
         type: "circle"
       },
       opacity: {
-        value: 0.4,
+        value: 0.65,
         random: true
       },
       size: {
@@ -773,7 +773,7 @@ function initParticles() {
         enable: true,
         distance: 120,
         color: "#ffffff",
-        opacity: 0.2,
+        opacity: 0.55,
         width: 1
       },
       move: {
@@ -797,7 +797,7 @@ function initParticles() {
         grab: {
           distance: 140,
           links: {
-            opacity: 0.4
+            opacity: 0.45
           }
         }
       }
