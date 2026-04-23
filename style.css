@@ -139,7 +139,7 @@ body.no-footer .footer { display: none; }
   padding-top: var(--space-2);
 }
 
-.page { display: none; }
+.page { display: none; z-index: 2;}
 .page.is-active { display: block; }
 /* Default bottom breathing room so content never touches viewport bottom */
 .page > .container:last-child { padding-bottom: var(--space-10); }
