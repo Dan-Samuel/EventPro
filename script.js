@@ -750,30 +750,35 @@ function initParticles() {
     fpsLimit: 60,
     particles: {
       number: {
-        value: 10
-      },
-      color: {
-        value: ["#3b82f6", "#ffffff"] // blue + white
-      },
-      shape: {
-        type: ["circle", "triangle", "polygon"],
-        polygon: {
-          sides: 5 // now correctly nested
+        value: 60,
+        density: {
+          enable: true,
+          area: 800
         }
       },
+      color: {
+        value: "#ffffff"
+      },
+      shape: {
+        type: "circle"
+      },
       opacity: {
-        value: 0.5,
+        value: 0.4,
         random: true
       },
       size: {
-        value: { min: 5, max: 10 }
+        value: { min: 1, max: 3 }
       },
       links: {
-        enable: false
+        enable: true,
+        distance: 120,
+        color: "#ffffff",
+        opacity: 0.2,
+        width: 1
       },
       move: {
         enable: true,
-        speed: 0.3, // smoother, more premium feel
+        speed: 0.5,
         direction: "none",
         outModes: {
           default: "out"
@@ -792,7 +797,7 @@ function initParticles() {
         grab: {
           distance: 140,
           links: {
-            opacity: 0.3
+            opacity: 0.4
           }
         }
       }
