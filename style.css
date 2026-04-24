@@ -672,6 +672,7 @@ body.is-auth #profileWrap { display: block; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-3);
+  padding-bottom: 30px;
 }
 .cat-card {
   background: #fff;
