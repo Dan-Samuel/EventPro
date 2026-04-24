@@ -151,12 +151,12 @@ section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8)
 
 #categories-section {
    background: #fafafa;
-   padding-bottom: 60px;
 }
 #featured-section {
    background: #F1F5F9;
 }
 #upcoming-section {
+   background: #F9FAFB;
    border-top: 1px solid #EDEDED;
 }
 
