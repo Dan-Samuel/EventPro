@@ -149,6 +149,10 @@ body.no-footer .footer { display: none; }
 /* Landing page ends with cta-band, not a container — reset rule above */
 section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8); }
 
+#categories-section {
+   background: #f5f5f5;
+}
+
 /* 4) Navbars + side menu
    -------------------------------------------------------------------------- */
 .brand {
