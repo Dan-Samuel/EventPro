@@ -841,7 +841,7 @@ body.is-auth #profileWrap { display: block; }
   color: #fff;
   padding: var(--space-10) var(--gutter);
   text-align: center;
-  margin-top: var(--space-10);
+  /* margin-top: var(--space-10); */
 }
 .cta-band h2 {
   font-size: 22px;
