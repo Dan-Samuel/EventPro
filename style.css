@@ -150,7 +150,7 @@ body.no-footer .footer { display: none; }
 section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8); }
 
 #categories-section {
-   background: #000000;
+   background: #fafafa;
 }
 
 /* 4) Navbars + side menu
