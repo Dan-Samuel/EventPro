@@ -151,6 +151,10 @@ section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8)
 
 #categories-section {
    background: #fafafa;
+   padding-bottom: 30px;
+}
+#featured-events {
+   background: #000;
 }
 
 /* 4) Navbars + side menu
