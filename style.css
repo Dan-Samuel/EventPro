@@ -150,7 +150,7 @@ body.no-footer .footer { display: none; }
 section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8); }
 
 #categories-section {
-   background: #fafafa;
+   background: #F9FAFB;
 }
 #featured-section {
    background: #F1F5F9;
