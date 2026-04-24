@@ -156,7 +156,7 @@ section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8)
    background: #F1F5F9;
 }
 #upcoming-section {
-   background: #F9FAFB;
+   background: #F3F4F6;
    border-top: 1px solid #EDEDED;
 }
 
