@@ -153,8 +153,7 @@ section[data-route="/"] > .container:last-child { padding-bottom: var(--space-8)
    background: #fafafa;
 }
 #featured-section {
-   background: var(--blue);
-   opacity: 0.5;
+   background: #F1F5F9;
 }
 
 /* 4) Navbars + side menu
