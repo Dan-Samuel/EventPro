@@ -529,7 +529,7 @@ function renderSideMenu() {
         { href: '#/dashboard',label: 'Organizer Dashboard' },
         { href: '#/create',   label: 'Create Event' },
         { divider: true },
-        { logout: true,       label: 'Sigm Out' },
+        { logout: true,       label: 'Sign Out' },
       ]
     : [
         { href: '#/',         label: 'Home' },
